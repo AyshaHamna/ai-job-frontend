@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 const NavLinks = () => {
   return (
     <>
-      <div className="flex gap-x-4 items-center">
+      <div className="flex gap-x-10 items-center">
         <Link to={"/"}>Home</Link>
         <SignedIn>
           <UserButton afterSignOutUrl="/sign-in" />
@@ -38,7 +38,7 @@ function Navigation() {
           </Link>
         </div>
 
-        <div className="hidden sm:flex justify-center gap-x-8 items-center">
+        <div className="hidden sm:flex justify-center items-center">
           <NavLinks />
         </div>
 
