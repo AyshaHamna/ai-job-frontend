@@ -27,17 +27,16 @@ function AdminJobApplicationPage() {
       return;
     }
 
-    async function fetchData(){
-      const token = await Auth.getToken();
-      getJobApplicationById(applicationId, token)
-      .then((data) => {
+    async function fetchData() {
+      try {
+        const token = await Auth.getToken();
+        const data = await getJobApplicationById(applicationId, token);
         setJobApplication(data as JobApplication);
         setIsLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.log(err);
         setIsLoading(false);
-      });
+      }
     }
     fetchData();
   }, [applicationId]);
