@@ -47,15 +47,24 @@
       @apply leading-7 [&:not(:first-child)]:mt-6;
     }
     .hero {
-      background: url(/hero-3.png);
-      background-position: center;
+      position: relative;
+      background: url(/lap-hero.jpg);
+      background-position: center 30%;
       background-size: cover;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 50, 0.3); /* Navy color with 70% opacity */
+      z-index: 1;
     }
   }
 
   @layer utilities {
     .text-underlay-1 {
-      background: linear-gradient(98deg, #d9ff00 -9.47%, #00a49d 65.47%);
+      background: linear-gradient(98deg, #4BC0D9 -9.47%, #00FFC6 65.47%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
