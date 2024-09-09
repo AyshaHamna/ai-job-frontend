@@ -2,7 +2,7 @@ import { Job } from "@/types/job";
 
 export const getJobs = async () => {
   const res = await fetch(
-    `https://ai-job-backend-production.up.railway.app/jobs`,
+    `${process.env.API_URL}/jobs`,
     {
       method: "GET",
     }
@@ -16,7 +16,7 @@ export const getJobById = async (
   token: string | null | undefined
 ) => {
   const res = await fetch(
-    `https://ai-job-backend-production.up.railway.app/jobs/${id}`,
+    `${process.env.API_URL}/jobs/${id}`,
     {
       method: "GET",
       headers: {
@@ -44,7 +44,7 @@ export const createJob = async (
   },
   token: string | null | undefined
 ) => {
-  await fetch(`https://ai-job-backend-production.up.railway.app/jobs`, {
+  await fetch(`${process.env.API_URL}/jobs`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

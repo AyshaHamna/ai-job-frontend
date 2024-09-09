@@ -7,7 +7,7 @@ export const getJobApplicationsForJob = async (
   //console.log("job application id: ", id);
 
   const res = await fetch(
-    `https://ai-job-backend-production.up.railway.app/jobApplications?jobId=${id}`,
+    `${process.env.API_URL}/jobApplications?jobId=${id}`,
     {
       method: "GET",
       headers: {
@@ -25,7 +25,7 @@ export const getJobApplicationById = async (
   token: string | null | undefined
 ) => {
   const res = await fetch(
-    `https://ai-job-backend-production.up.railway.app/jobapplications/${id}`,
+    `${process.env.API_URL}/jobApplications/${id}`,
     {
       method: "GET",
       headers: {
@@ -52,7 +52,7 @@ export const createJobApplication = async (
   token: string | null | undefined
 ) => {
   await fetch(
-    `https://ai-job-backend-production.up.railway.app/jobapplications`,
+    `${process.env.API_URL}/jobApplications`,
     {
       method: "POST",
       headers: {
