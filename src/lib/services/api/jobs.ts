@@ -1,8 +1,12 @@
 import { Job } from "@/types/job";
 
+const API_URL = process.env.API_URL;
+
+if (!API_URL) console.error("API URL is not set");
+
 export const getJobs = async () => {
   const res = await fetch(
-    `${process.env.API_URL}/jobs`,
+    `${API_URL}/jobs`,
     {
       method: "GET",
     }
@@ -16,7 +20,7 @@ export const getJobById = async (
   token: string | null | undefined
 ) => {
   const res = await fetch(
-    `${process.env.API_URL}/jobs/${id}`,
+    `${API_URL}/jobs/${id}`,
     {
       method: "GET",
       headers: {
@@ -44,7 +48,7 @@ export const createJob = async (
   },
   token: string | null | undefined
 ) => {
-  await fetch(`${process.env.API_URL}/jobs`, {
+  await fetch(`${API_URL}/jobs`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
