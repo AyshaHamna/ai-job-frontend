@@ -1,6 +1,6 @@
 import { Job } from "@/types/job";
 
-const API_URL = process.env.API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 if (!API_URL) console.error("API URL is not set");
 
