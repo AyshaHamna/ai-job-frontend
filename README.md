@@ -4,6 +4,7 @@
 This job portal application is built using ReactJS, TypeScript, Tailwindcss, and a ChatGPT 3.0 instance for AI-powered job matching. It handles user authentication, job listings, job postings, and job applications.
 
 [Live Demo](https://aidf-front-end-hamna.netlify.app/)
+![Home Page](./public/hirelyai-home-page.png)
 
 ## Features
 - User authentication
